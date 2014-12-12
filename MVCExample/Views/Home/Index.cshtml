@@ -1,0 +1,15 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<br />
+<p>Simple Customer application using MVC</p>
+<br />
+<p>The current time is @DateTime.Now</p>
+<br />
+@Html.ActionLink("Add New Customers", "Create", "Customer")
+<br />
+@Html.ActionLink("Search Customers", "EnterSearch", "Customer")
+<br />

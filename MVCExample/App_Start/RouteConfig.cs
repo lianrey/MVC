@@ -14,9 +14,9 @@ namespace MVCExample
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
-                name: "Customer",
+                name: "Home",
                 url: "",
-                defaults: new { controller = "Customer", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(

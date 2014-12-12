@@ -10,11 +10,11 @@ using System.Threading;
 
 namespace MVCExample.Controllers
 {
+    [Authorize]
     public class CustomerController : Controller
     {
         //
         // GET: /Customer/
-
         public ActionResult Index()
         {
             Customer obj = new Customer() { CustomerCode = "ABC12345", CustomerName = "Indi" };
@@ -37,7 +37,7 @@ namespace MVCExample.Controllers
 
         public ActionResult getCustomers()
         {
-            CustomerDAL dal = new CustomerDAL();
+            Dal dal = new Dal();
             List<Customer> list = dal.Customers.ToList<Customer>();
             return Json(list, JsonRequestBehavior.AllowGet);
         }
@@ -46,7 +46,7 @@ namespace MVCExample.Controllers
         {
             CustomerVM vm = new CustomerVM();
             Customer customer = new Customer();
-            CustomerDAL dal = new CustomerDAL();
+            Dal dal = new Dal();
             string str = Request.Form["txtCustomerName"].ToString();
 
             List<Customer> customers = (from x in dal.Customers
@@ -66,7 +66,7 @@ namespace MVCExample.Controllers
                 obj.CustomerName = Request.Form["Customer.CustomerName"];
                 obj.CustomerCode = Request.Form["Customer.CustomerCode"];
 
-                CustomerDAL cDal = new CustomerDAL();
+                Dal cDal = new Dal();
                 cDal.Customers.Add(obj);
                 cDal.SaveChanges();
             }

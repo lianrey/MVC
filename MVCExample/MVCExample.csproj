@@ -184,9 +184,13 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\SomeModule1\SomeModule1AreaRegistration.cs" />
+    <Compile Include="Areas\SomeModule2\SomeModule2AreaRegistration.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
     <Compile Include="Controllers\DashboardController.cs" />
-    <Compile Include="DAL\CustomerDAL.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="DAL\Dal.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -194,6 +198,7 @@
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Dashboard.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModel\CustomerVM.cs" />
   </ItemGroup>
@@ -254,6 +259,9 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Areas\SomeModule1\Views\Web.config" />
+    <Content Include="Areas\SomeModule2\Views\Web.config" />
+    <None Include="Properties\PublishProfiles\GoLife.pubxml" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -297,9 +305,17 @@
     <Content Include="Views\Customer\Search.cshtml" />
     <Content Include="Views\Customer\DisplayCustomers.cshtml" />
     <Content Include="Views\Dashboard\Index.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Areas\SomeModule1\Controllers\" />
+    <Folder Include="Areas\SomeModule1\Models\" />
+    <Folder Include="Areas\SomeModule1\Views\Shared\" />
+    <Folder Include="Areas\SomeModule2\Controllers\" />
+    <Folder Include="Areas\SomeModule2\Models\" />
+    <Folder Include="Areas\SomeModule2\Views\Shared\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
