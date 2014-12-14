@@ -58,19 +58,17 @@ namespace MVCExample.Controllers
             return View("Search",vm);
         }
 
-        public ActionResult Submit()
+        public ActionResult Submit(Customer obj)
         {
-            Customer obj = new Customer();
             if (ModelState.IsValid)
             {
-                obj.CustomerName = Request.Form["Customer.CustomerName"];
-                obj.CustomerCode = Request.Form["Customer.CustomerCode"];
-
                 Dal cDal = new Dal();
                 cDal.Customers.Add(obj);
                 cDal.SaveChanges();
             }
-            return Json(obj, JsonRequestBehavior.AllowGet);
+            Dal dal = new Dal();
+            List<Customer> customers = dal.Customers.ToList<Customer>();
+            return Json(customers, JsonRequestBehavior.AllowGet);
         }
     }
 }
