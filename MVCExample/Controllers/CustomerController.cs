@@ -42,6 +42,16 @@ namespace MVCExample.Controllers
             return Json(list, JsonRequestBehavior.AllowGet);
         }
 
+        [ActionName("getCustomerByName")]
+        public ActionResult getCustomers(Customer obj)
+        {
+            Dal dal = new Dal();
+            List<Customer> list = (from temp in dal.Customers
+                                       where temp.CustomerName == obj.CustomerName
+                                   select temp).ToList<Customer>(); ;
+            return Json(list, JsonRequestBehavior.AllowGet);
+        }
+
         public ActionResult SearchCustomer() 
         {
             CustomerVM vm = new CustomerVM();
