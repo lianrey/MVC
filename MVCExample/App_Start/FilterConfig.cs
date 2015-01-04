@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using MVCExample.Filters;
+using System.Web;
 using System.Web.Mvc;
 
 namespace MVCExample
@@ -8,6 +9,7 @@ namespace MVCExample
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new SimpleFilter());
         }
     }
 }

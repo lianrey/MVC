@@ -192,9 +192,11 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="DAL\Dal.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
+    <Compile Include="Filters\SimpleFilter.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\HtmlHelper.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Dashboard.cs" />
